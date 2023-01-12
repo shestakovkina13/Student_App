@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Student app</string>
+    <string name="study">Study</string>
+    <string name="debt">Debt</string>
+    <string name="profile">Profile</string>
+    <string name="no_debts">There are no debts</string>
+
+    <string name="exit">Exit</string>
+    <string name="enter">enter</string>
+
+    <string name="login_error">Field should not be empty</string>
+    <string name="password_error">The minimum password size is 8</string>
+</resources>
