@@ -10,6 +10,7 @@ class StudyViewModel : ViewModel() {
     val studyList = MutableLiveData<List<Study>>()
 
     fun getStudyList() {
-        studyList.value = App.get().repository.getStudyList()
+        val userId = App.get().repository.getUserId()
+        studyList.value = App.get().repository.getStudyList(userId)
     }
 }

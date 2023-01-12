@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.studentapp.ui.activity.LoginActivity
+import com.example.studentapp.ui.activity.login.LoginActivity
 import com.example.studentapp.databinding.FragmentProfileBinding
 import com.example.studentapp.ui.base.BaseFragment
 
@@ -32,6 +32,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         }
 
         binding.btnExit.setOnClickListener {
+            viewModel.clearDB()
             requireActivity().apply {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()

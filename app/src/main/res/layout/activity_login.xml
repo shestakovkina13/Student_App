@@ -22,7 +22,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Login"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />

@@ -10,4 +10,7 @@
 
     <string name="login_error">Field should not be empty</string>
     <string name="password_error">The minimum password size is 8</string>
+
+    <string name="week">%d week</string>
+    <string name="max_score">from %d</string>
 </resources>

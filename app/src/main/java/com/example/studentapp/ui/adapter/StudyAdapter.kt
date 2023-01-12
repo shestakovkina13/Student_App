@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.databinding.ListItemStudyBinding
 import com.example.studentapp.domain.entity.Study
 
-class StudyAdapter : RecyclerView.Adapter<StudyAdapter.ViewHolder>() {
+class StudyAdapter(private val listener: (Int) -> Unit) :
+    RecyclerView.Adapter<StudyAdapter.ViewHolder>() {
 
     private var studyList: List<Study> = listOf()
 
@@ -18,7 +19,7 @@ class StudyAdapter : RecyclerView.Adapter<StudyAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(studyList[position])
+        holder.bind(studyList[position], listener)
     }
 
     override fun getItemCount() = studyList.size
@@ -31,7 +32,7 @@ class StudyAdapter : RecyclerView.Adapter<StudyAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ListItemStudyBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Study) {
+        fun bind(item: Study, listener: (Int) -> Unit) {
             val color = ContextCompat.getColor(binding.root.context, item.color)
 
             binding.pbScore.progress = item.score
@@ -39,6 +40,10 @@ class StudyAdapter : RecyclerView.Adapter<StudyAdapter.ViewHolder>() {
             binding.tvScore.text = item.score.toString()
             binding.tvSubject.text = item.subject
             binding.tvType.text = item.type
+
+            binding.root.setOnClickListener {
+                listener.invoke(item.id)
+            }
         }
     }
 }

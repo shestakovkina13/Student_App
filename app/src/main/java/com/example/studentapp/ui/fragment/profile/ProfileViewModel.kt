@@ -9,6 +9,11 @@ class ProfileViewModel : ViewModel() {
     val profile = MutableLiveData<Profile>()
 
     fun getProfile() {
-        profile.value = App.get().repository.getProfile()
+        val id = App.get().repository.getUserId()
+        App.get().repository.getProfileById(id)?.let { profile.value = it }
+    }
+
+    fun clearDB() {
+        App.get().repository.clearDB()
     }
 }

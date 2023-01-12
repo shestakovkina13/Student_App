@@ -5,7 +5,7 @@ import com.example.studentapp.domain.Repository
 
 class App : Application() {
 
-    val repository: Repository = Repository()
+    val repository: Repository by lazy { Repository() }
 
     override fun onCreate() {
         super.onCreate()

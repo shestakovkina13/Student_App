@@ -10,6 +10,7 @@ class DebtViewModel : ViewModel() {
     val studyList = MutableLiveData<List<Study>>()
 
     fun getStudyList() {
-        studyList.value = App.get().repository.getDebtList()
+        val userId = App.get().repository.getUserId()
+        studyList.value = App.get().repository.getDebtList(userId)
     }
 }
