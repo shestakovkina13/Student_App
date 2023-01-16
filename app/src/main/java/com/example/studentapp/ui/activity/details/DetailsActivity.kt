@@ -1,6 +1,7 @@
 package com.example.studentapp.ui.activity.details
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,8 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         viewModel.getDetails(intent.getIntExtra(STUDY_ID, -1))
 
         viewModel.details.observe(this) {
@@ -32,6 +35,11 @@ class DetailsActivity : AppCompatActivity() {
 
         binding.rvDetails.adapter = adapter
         binding.rvDetails.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        onBackPressed()
+        return true
     }
 
     companion object {

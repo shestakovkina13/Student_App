@@ -27,7 +27,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:progress="54"
-                app:indicatorColor="@color/teal_700"
+                app:indicatorColor="?attr/colorPrimary"
                 app:indicatorSize="100dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
