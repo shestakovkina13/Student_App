@@ -5,6 +5,7 @@ import com.example.studentapp.domain.entity.Profile
 import com.example.studentapp.domain.entity.Study
 import com.example.studentapp.domain.entity.StudyDetails
 
+@Suppress("MagicNumber")
 object Database {
 
     private val profiles = listOf(
@@ -126,5 +127,5 @@ object Database {
 
     fun getProfileById(id: Int) = profiles.firstOrNull { it.id == id }
 
-    fun getDetailsByStudyId(id: Int) = details.firstOrNull() { it.parentId == id }
+    fun getDetailsByStudyId(id: Int) = details.firstOrNull { it.parentId == id }
 }
