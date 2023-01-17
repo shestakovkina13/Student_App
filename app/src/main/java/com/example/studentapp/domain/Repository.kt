@@ -6,17 +6,17 @@ import com.example.studentapp.domain.entity.Study
 
 interface Repository {
 
-    fun getStudyList(id: Int): List<Study>
+    suspend fun getStudyList(id: Int): List<Study>
 
-    fun getDebtList(id: Int): List<Study>
+    suspend fun getDebtList(id: Int): List<Study>
 
-    fun getProfileById(id: Int): Profile?
+    suspend fun getProfileById(id: Int): Profile?
 
-    fun getDetails(id: Int): Details?
+    suspend fun getDetails(id: Int): Details?
 
-    fun setUserId(id: Int)
+    suspend fun setUserId(id: Int)
 
-    fun getUserId(): Int
+    suspend fun getUserId(): Int
 
-    fun clearDB()
+    suspend fun clearDB()
 }

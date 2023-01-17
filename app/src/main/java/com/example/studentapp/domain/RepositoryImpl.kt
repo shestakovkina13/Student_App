@@ -8,21 +8,21 @@ import com.example.studentapp.ui.App
 
 class RepositoryImpl : Repository {
 
-    override fun getStudyList(id: Int): List<Study> = Database.getStudyListById(id)
+    override suspend fun getStudyList(id: Int): List<Study> = Database.getStudyListById(id)
 
-    override fun getDebtList(id: Int): List<Study> = Database.getDebtListById(id)
+    override suspend fun getDebtList(id: Int): List<Study> = Database.getDebtListById(id)
 
-    override fun getProfileById(id: Int): Profile? = Database.getProfileById(id)
+    override suspend fun getProfileById(id: Int): Profile? = Database.getProfileById(id)
 
-    override fun getDetails(id: Int) = Database.getDetailsByStudyId(id)
+    override suspend fun getDetails(id: Int) = Database.getDetailsByStudyId(id)
 
-    override fun setUserId(id: Int) {
+    override suspend fun setUserId(id: Int) {
         preferences.edit().putInt(ID, id).apply()
     }
 
-    override fun getUserId() = preferences.getInt(ID, -1)
+    override suspend fun getUserId() = preferences.getInt(ID, -1)
 
-    override fun clearDB() {
+    override suspend fun clearDB() {
         preferences.edit().clear().apply()
     }
 
