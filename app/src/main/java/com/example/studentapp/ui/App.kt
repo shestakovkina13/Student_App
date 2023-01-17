@@ -2,10 +2,11 @@ package com.example.studentapp.ui
 
 import android.app.Application
 import com.example.studentapp.domain.Repository
+import com.example.studentapp.domain.RepositoryImpl
 
 class App : Application() {
 
-    val repository: Repository by lazy { Repository() }
+    val repository: Repository by lazy { RepositoryImpl() }
 
     override fun onCreate() {
         super.onCreate()

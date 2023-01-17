@@ -1,34 +1,22 @@
 package com.example.studentapp.domain
 
-import android.content.Context
-import android.content.SharedPreferences
+import com.example.studentapp.domain.entity.Details
 import com.example.studentapp.domain.entity.Profile
 import com.example.studentapp.domain.entity.Study
-import com.example.studentapp.ui.App
 
-class Repository {
-    fun getStudyList(id: Int): List<Study> = Database.getStudyListById(id)
+interface Repository {
 
-    fun getDebtList(id: Int): List<Study> = Database.getDebtListById(id)
+    fun getStudyList(id: Int): List<Study>
 
-    fun getProfileById(id: Int): Profile? = Database.getProfileById(id)
+    fun getDebtList(id: Int): List<Study>
 
-    fun getDetails(id: Int) = Database.getDetailsByStudyId(id)
+    fun getProfileById(id: Int): Profile?
 
-    fun setUserId(id: Int) {
-        preferences.edit().putInt(ID, id).apply()
-    }
+    fun getDetails(id: Int): Details?
 
-    fun getUserId() = preferences.getInt(ID, -1)
+    fun setUserId(id: Int)
 
-    fun clearDB() {
-        preferences.edit().clear().apply()
-    }
+    fun getUserId(): Int
 
-    companion object {
-        private const val SHARED_PREFERENCES = "SHARED_PREFERENCES"
-        private const val ID = "ID"
-        val preferences: SharedPreferences =
-            App.get().getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
-    }
+    fun clearDB()
 }
