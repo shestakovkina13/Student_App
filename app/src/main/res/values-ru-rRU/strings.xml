@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Student app</string>
+    <string name="study">Обучение</string>
+    <string name="debt">Долги</string>
+    <string name="profile">Профиль</string>
+    <string name="no_debts">Долги отсутствуют</string>
+
+    <string name="exit">Выход</string>
+    <string name="enter">Вход</string>
+
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="login_error">Поле не должно быть пустым</string>
+    <string name="password_error">Минимальный размер пароля %d</string>
+
+    <string name="week">%d неделя</string>
+    <string name="max_score">из %d</string>
+
+    <string name="first_numerator">1ая верхняя</string>
+    <string name="second_numerator">2ая верхняя</string>
+    <string name="first_delimiter">1ая нижняя</string>
+    <string name="second_delimiter">2ая нижняя</string>
+</resources>

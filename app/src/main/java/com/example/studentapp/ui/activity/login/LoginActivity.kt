@@ -31,14 +31,14 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             val loginError = binding.etLogin.text.isEmpty()
-            val passwordError = binding.etPassword.text.length < 6
+            val passwordError = binding.etPassword.text.length < MINIMUM_PASSWORD_SIZE
 
             if (loginError) {
                 binding.etLogin.error = getString(R.string.login_error)
             }
 
             if (passwordError) {
-                binding.etPassword.error = getString(R.string.password_error)
+                binding.etPassword.error = getString(R.string.password_error, MINIMUM_PASSWORD_SIZE)
             }
 
             if (!loginError && !passwordError) {
@@ -50,5 +50,9 @@ class LoginActivity : AppCompatActivity() {
     private fun startMainActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
+
+    companion object {
+        private const val MINIMUM_PASSWORD_SIZE = 8
     }
 }

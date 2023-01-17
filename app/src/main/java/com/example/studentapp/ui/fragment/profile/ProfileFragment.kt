@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.studentapp.ui.activity.login.LoginActivity
 import com.example.studentapp.databinding.FragmentProfileBinding
+import com.example.studentapp.ui.activity.login.LoginActivity
 import com.example.studentapp.ui.base.BaseFragment
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
@@ -26,7 +26,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
             binding.pbScore.progress = it.semesterProgress
             binding.tvScore.text = it.semesterValue.toString()
             binding.tvUsername.text = it.username
-            binding.tvWeek.text = it.week
+            binding.tvWeek.setText(it.week)
             binding.tvGroup.text = it.group
             binding.tvId.text = it.id.toString()
         }

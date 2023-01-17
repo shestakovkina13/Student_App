@@ -8,9 +8,16 @@
     <string name="exit">Exit</string>
     <string name="enter">enter</string>
 
+    <string name="login">Login</string>
+    <string name="password">Password</string>
     <string name="login_error">Field should not be empty</string>
-    <string name="password_error">The minimum password size is 8</string>
+    <string name="password_error">The minimum password size is %d</string>
 
     <string name="week">%d week</string>
     <string name="max_score">from %d</string>
+
+    <string name="first_numerator">1st numerator</string>
+    <string name="second_numerator">2nd numerator</string>
+    <string name="first_delimiter">1st delimiter</string>
+    <string name="second_delimiter">2nd delimiter</string>
 </resources>
