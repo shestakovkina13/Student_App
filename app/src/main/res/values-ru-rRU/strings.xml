@@ -4,6 +4,7 @@
     <string name="study">Обучение</string>
     <string name="debt">Долги</string>
     <string name="profile">Профиль</string>
+    <string name="notifications">Уведомления</string>
     <string name="no_debts">Долги отсутствуют</string>
 
     <string name="exit">Выход</string>
@@ -21,4 +22,13 @@
     <string name="second_numerator">2ая верхняя</string>
     <string name="first_delimiter">1ая нижняя</string>
     <string name="second_delimiter">2ая нижняя</string>
+
+    <string name="permission_not_granted">Разрешение на уведомление не предоставлено</string>
+
+    <string name="notification_retake_title">Волна пересдач</string>
+    <string name="notification_retake">Скоро волна пересдач. Пора задуматься о закрытии несданных дисциплин. Перейти на сайт, чтобы посмотреть расписание преподавателя (https://stub.com)</string>
+    <string name="notification_check_title">Внимание</string>
+    <string name="notification_check">Проверь успеваешь ли ты сдать все работы в срок</string>
+    <string name="notification_schedule_behind_title">Отставание от графика</string>
+    <string name="notification_schedule_behind">Кажется ты отстаешь от графика, постарайся выполнить все необходимое в срок</string>
 </resources>

@@ -3,6 +3,7 @@
     <string name="study">Study</string>
     <string name="debt">Debt</string>
     <string name="profile">Profile</string>
+    <string name="notifications">Notifications</string>
     <string name="no_debts">There are no debts</string>
 
     <string name="exit">Exit</string>
@@ -20,4 +21,13 @@
     <string name="second_numerator">2nd numerator</string>
     <string name="first_delimiter">1st delimiter</string>
     <string name="second_delimiter">2nd delimiter</string>
+
+    <string name="permission_not_granted">Notification permission not granted</string>
+
+    <string name="notification_retake_title">Wave of retake</string>
+    <string name="notification_retake">A wave of retakes is coming soon. It\'s time to think about closing unreleased disciplines. Go to the website to view the teacher\'s schedule (https://stub.com)</string>
+    <string name="notification_check_title">Warning</string>
+    <string name="notification_check">Check if you have time to pass all the work on time</string>
+    <string name="notification_schedule_behind_title">Behind schedule</string>
+    <string name="notification_schedule_behind">It seems you are behind schedule, try to do everything you need on time</string>
 </resources>

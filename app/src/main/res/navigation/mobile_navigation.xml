@@ -22,4 +22,10 @@
         android:name="com.example.studentapp.ui.fragment.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.studentapp.ui.fragment.notification.NotificationFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notification" />
 </navigation>
