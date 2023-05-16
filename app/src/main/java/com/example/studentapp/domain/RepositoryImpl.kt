@@ -1,10 +1,11 @@
 package com.example.studentapp.domain
 
-import android.content.Context
-import android.content.SharedPreferences
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
 import com.example.studentapp.domain.entity.Profile
 import com.example.studentapp.domain.entity.Study
 import com.example.studentapp.ui.App
+
 
 class RepositoryImpl : Repository {
 
@@ -29,7 +30,15 @@ class RepositoryImpl : Repository {
     companion object {
         private const val SHARED_PREFERENCES = "SHARED_PREFERENCES"
         private const val ID = "ID"
-        val preferences: SharedPreferences =
-            App.get().getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
+        var masterKey = MasterKey.Builder(App.get(), MasterKey.DEFAULT_MASTER_KEY_ALIAS)
+            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+            .build()
+        val preferences = EncryptedSharedPreferences.create(
+            App.get(),
+            SHARED_PREFERENCES,
+            masterKey,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
+        )
     }
 }
