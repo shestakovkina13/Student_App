@@ -1,8 +1,8 @@
-package com.example.studentapp.domain.entity
+package com.example.studentapp.ui.entity
 
 import com.example.studentapp.R
 
-data class Profile(
+data class ProfileItem(
     val username: String,
     val group: String,
     val id: Int,

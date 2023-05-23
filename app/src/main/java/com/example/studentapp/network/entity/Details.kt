@@ -1,4 +1,4 @@
-package com.example.studentapp.domain.entity
+package com.example.studentapp.network.entity
 
 data class Details(
     val parentId: Int,
@@ -6,5 +6,5 @@ data class Details(
     val form: String,
     val teacherName: String,
     val department: String,
-    val studyDetailsList: List<StudyDetails>
+    val studyDetailsList: List<StudyDetails>,
 )

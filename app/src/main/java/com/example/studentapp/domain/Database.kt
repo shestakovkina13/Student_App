@@ -1,9 +1,9 @@
 package com.example.studentapp.domain
 
-import com.example.studentapp.domain.entity.Details
-import com.example.studentapp.domain.entity.Profile
-import com.example.studentapp.domain.entity.Study
-import com.example.studentapp.domain.entity.StudyDetails
+import com.example.studentapp.network.entity.Details
+import com.example.studentapp.network.entity.Profile
+import com.example.studentapp.network.entity.Study
+import com.example.studentapp.network.entity.StudyDetails
 
 @Suppress("MagicNumber")
 object Database {

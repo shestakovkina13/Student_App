@@ -6,11 +6,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
 import com.example.studentapp.databinding.ListItemDetailsBinding
-import com.example.studentapp.domain.entity.StudyDetails
+import com.example.studentapp.ui.entity.StudyDetailsItem
 
 class DetailsAdapter : RecyclerView.Adapter<DetailsAdapter.ViewHolder>() {
 
-    private var studyList: List<StudyDetails> = listOf()
+    private var studyList: List<StudyDetailsItem> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -24,7 +24,7 @@ class DetailsAdapter : RecyclerView.Adapter<DetailsAdapter.ViewHolder>() {
 
     override fun getItemCount() = studyList.size
 
-    fun setItems(items: List<StudyDetails>) {
+    fun setItems(items: List<StudyDetailsItem>) {
         studyList = items
         notifyDataSetChanged()
     }
@@ -32,7 +32,7 @@ class DetailsAdapter : RecyclerView.Adapter<DetailsAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ListItemDetailsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: StudyDetails) {
+        fun bind(item: StudyDetailsItem) {
             val context = binding.root.context
             val color = ContextCompat.getColor(binding.root.context, item.scoreColor)
 

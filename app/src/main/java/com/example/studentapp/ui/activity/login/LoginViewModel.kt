@@ -2,6 +2,7 @@ package com.example.studentapp.ui.activity.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.studentapp.domain.entity.User
 import com.example.studentapp.ui.App
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -14,19 +15,20 @@ class LoginViewModel : ViewModel() {
 
     fun checkProfileExist() {
         CoroutineScope(Dispatchers.IO).launch {
-            val id = App.get().repository.getUserId()
-            val profile = App.get().repository.getProfileById(id)
+            val user = App.get().domainRepository.getUser()
+            val profile = App.get().networkRepository.getProfileByUser(user)
             withContext(Dispatchers.Main) {
                 profileExist.value = profile != null
             }
         }
     }
 
-    fun setId(id: Int) {
+    fun setUser(login: String, password: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val profile = App.get().repository.getProfileById(id)
+            val user = User(login, password)
+            val profile = App.get().networkRepository.getProfileByUser(user)
             if (profile != null) {
-                App.get().repository.setUserId(id)
+                App.get().domainRepository.setUser(user)
                 withContext(Dispatchers.Main) {
                     profileExist.value = true
                 }

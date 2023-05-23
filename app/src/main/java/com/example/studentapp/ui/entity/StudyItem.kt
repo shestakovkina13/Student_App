@@ -1,8 +1,8 @@
-package com.example.studentapp.domain.entity
+package com.example.studentapp.ui.entity
 
 import com.example.studentapp.R
 
-data class Study(
+data class StudyItem(
     val id: Int,
     val score: Int,
     val subject: String,
@@ -16,4 +16,3 @@ data class Study(
         else -> R.color.green
     }
 )
-

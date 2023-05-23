@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentapp.databinding.ActivityDetailsBinding
 import com.example.studentapp.ui.adapter.DetailsAdapter
+import com.example.studentapp.utils.mapStudyDetails
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -30,7 +31,7 @@ class DetailsActivity : AppCompatActivity() {
             binding.tvForm.text = it.form
             binding.tvTeacherName.text = it.teacherName
             binding.tvDepartment.text = it.department
-            adapter.setItems(it.studyDetailsList)
+            adapter.setItems(mapStudyDetails(it.studyDetailsList))
         }
 
         binding.rvDetails.adapter = adapter

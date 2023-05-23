@@ -30,8 +30,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            val loginError = binding.etLogin.text.isEmpty()
-            val passwordError = binding.etPassword.text.length < MINIMUM_PASSWORD_SIZE
+            val login = binding.etLogin.text
+            val password = binding.etPassword.text
+
+            val loginError = login.isEmpty()
+            val passwordError = password.length < MINIMUM_PASSWORD_SIZE
 
             if (loginError) {
                 binding.etLogin.error = getString(R.string.login_error)
@@ -42,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (!loginError && !passwordError) {
-                viewModel.setId(binding.etLogin.text.toString().toInt())
+                viewModel.setUser(login.toString(), password.toString())
             }
         }
     }
