@@ -15,10 +15,12 @@ class ProfileViewModel : ViewModel() {
 
     fun getProfile() {
         CoroutineScope(Dispatchers.IO).launch {
-            val id = App.get().domainRepository.getUser()
-            App.get().networkRepository.getProfileByUser(id)?.let {
-                withContext(Dispatchers.Main) {
-                    profile.value = mapProfile(it)
+            val user = App.get().domainRepository.getUser()
+            if (user != null) {
+                App.get().networkRepository.getProfileByUser(user)?.let {
+                    withContext(Dispatchers.Main) {
+                        profile.value = mapProfile(it)
+                    }
                 }
             }
         }

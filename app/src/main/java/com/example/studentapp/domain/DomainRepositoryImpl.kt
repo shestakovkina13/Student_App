@@ -13,8 +13,8 @@ class DomainRepositoryImpl : DomainRepository {
         preferences.edit().putString(USER, gson.toJson(user)).apply()
     }
 
-    override fun getUser(): User =
-        preferences.getString(USER, "")?.let { gson.fromJson(it, User::class.java) } ?: User()
+    override fun getUser(): User? =
+        preferences.getString(USER, "")?.let { gson.fromJson(it, User::class.java) }
 
 
     override suspend fun clearDB() {

@@ -6,7 +6,7 @@ interface DomainRepository {
 
     fun setUser(user: User)
 
-    fun getUser(): User
+    fun getUser(): User?
 
     suspend fun clearDB()
 }

@@ -16,7 +16,7 @@ class LoginViewModel : ViewModel() {
     fun checkProfileExist() {
         CoroutineScope(Dispatchers.IO).launch {
             val user = App.get().domainRepository.getUser()
-            val profile = App.get().networkRepository.getProfileByUser(user)
+            val profile = user?.let { App.get().networkRepository.getProfileByUser(user) }
             withContext(Dispatchers.Main) {
                 profileExist.value = profile != null
             }

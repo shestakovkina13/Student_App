@@ -35,7 +35,7 @@ class NetworkRepositoryImpl : NetworkRepository {
 
         private val token = Interceptor { chain ->
             val user = App.get().domainRepository.getUser()
-            val credentials = Credentials.basic(user.login, user.password)
+            val credentials = user?.let { Credentials.basic(user.login, user.password) } ?: ""
             val original = chain.request()
             val request = original.newBuilder()
                 .header("Authorization", credentials)
