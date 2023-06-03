@@ -13,7 +13,7 @@ import com.example.studentapp.ui.adapter.StudyAdapter
 import com.example.studentapp.ui.base.BaseFragment
 
 class StudyFragment : BaseFragment<FragmentStudyBinding>() {
-
+//binding - создаёт экземпляр layout, генерирует код для view
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentStudyBinding =
         FragmentStudyBinding::inflate
 

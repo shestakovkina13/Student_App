@@ -1,5 +1,5 @@
 package com.example.studentapp.ui.adapter
-
+//предоставление списка, адаптирование данных под список
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -31,6 +31,7 @@ class DetailsAdapter : RecyclerView.Adapter<DetailsAdapter.ViewHolder>() {
 
     class ViewHolder(private val binding: ListItemDetailsBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        //для предоставления ограниченного окна в большом наборе данных, ViewHolder описывает вид элемента и метаданные о его месте в RecyclerView.
 
         fun bind(item: StudyDetailsItem) {
             val context = binding.root.context

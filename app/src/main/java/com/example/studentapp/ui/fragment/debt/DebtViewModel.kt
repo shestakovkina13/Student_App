@@ -13,7 +13,7 @@ import kotlinx.coroutines.withContext
 class DebtViewModel : ViewModel() {
 
     val studyList = MutableLiveData<List<StudyItem>>()
-
+//Coroutine для управления асинхронными задачами, которые иначе могут блокировать основной поток и приводить к зависанию UI приложения
     fun getStudyList() {
         CoroutineScope(Dispatchers.IO).launch {
             val list = mapStudyItems(App.get().networkRepository.getDebtList())

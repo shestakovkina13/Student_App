@@ -1,5 +1,5 @@
 package com.example.studentapp.utils
-
+//для преобразования данных из модели данных на сервере в модель данных для UI
 import com.example.studentapp.network.entity.Profile
 import com.example.studentapp.network.entity.Study
 import com.example.studentapp.network.entity.StudyDetails

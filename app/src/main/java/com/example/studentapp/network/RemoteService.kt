@@ -8,7 +8,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RemoteService {
-
+    //suspend означает, что функция должна запускаться внутри coroutine, чтобы не замедлять работу интерфейса
+//credentials - соединение логина и пароля
     @GET("profile.php")
     suspend fun getProfileById(@Query("credentials") credentials: String): Response<Profile?>
 

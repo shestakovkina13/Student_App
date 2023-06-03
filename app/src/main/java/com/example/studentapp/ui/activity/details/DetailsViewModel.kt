@@ -11,7 +11,8 @@ import kotlinx.coroutines.withContext
 
 class DetailsViewModel : ViewModel() {
     val details = MutableLiveData<Details>()
-
+//Coroutine - вызов отличного потока, используется многопоточность для быстродействия, для корректной работы интерфейса
+    //Dispatchers определяет какой поток или какие потоки будут использоваться для выполнения Coroutine
     fun getDetails(id: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             App.get().networkRepository.getDetails(id)?.let {

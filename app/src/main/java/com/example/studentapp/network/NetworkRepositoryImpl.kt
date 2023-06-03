@@ -16,7 +16,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkRepositoryImpl : NetworkRepository {
-
+    //suspend означает, что функция должна запускаться внутри coroutine, чтобы не замедлять работу интерфейса
+    //override - для переопределения свойства
     override suspend fun getProfileByUser(user: User): Profile? {
         val response = remoteService.getProfileById(Credentials.basic(user.login, user.password))
         return response.body()
@@ -49,11 +50,11 @@ class NetworkRepositoryImpl : NetworkRepository {
             .addNetworkInterceptor(logging)
             .addInterceptor(token)
             .build()
-
+//за счёт Retrofit интерфейсы API превращаются в вызываемые объекты, считается безопасным клиентом http для Android
         private val remoteService: RemoteService = Retrofit.Builder()
             .baseUrl("http://o9772829.beget.tech/api/")
             .client(client)
-            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create())) //добавление конвертера
             .build()
             .create(RemoteService::class.java)
     }

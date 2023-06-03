@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel.checkProfileExist()
-
+//observe - при изменении состояния объекта переходит в callback
         viewModel.profileExist.observe(this) {
             if (it) startMainActivity()
         }

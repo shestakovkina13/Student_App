@@ -13,7 +13,8 @@ import kotlinx.coroutines.withContext
 class StudyViewModel : ViewModel() {
 
     val studyList = MutableLiveData<List<StudyItem>>()
-
+//Coroutine - вызов отличного потока, используется многопоточность для быстродействия, для корректной работы интерфейса
+    //Dispatchers определяет какой поток или какие потоки будут использоваться для выполнения Coroutine
     fun getStudyList() {
         CoroutineScope(Dispatchers.IO).launch {
             val list = mapStudyItems(App.get().networkRepository.getStudyList())

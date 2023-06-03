@@ -13,19 +13,19 @@ class DetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding
     private val viewModel by viewModels<DetailsViewModel>()
-
+//lazy - ленивая инициализация (происходит, когда объект будет вызван первый раз)
     private val adapter by lazy { DetailsAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+//binding - создаёт экземпляр layout, генерирует код для view
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         viewModel.getDetails(intent.getIntExtra(STUDY_ID, -1))
-
+//observe - при изменении состояния объекта переходит в callback
         viewModel.details.observe(this) {
             title = it.subject
             binding.tvForm.text = it.form

@@ -30,7 +30,7 @@ class DebtFragment : BaseFragment<FragmentDebtBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+//binding - создаёт экземпляр layout, генерирует код для view
         binding.rvStudy.adapter = adapter
         binding.rvStudy.layoutManager = LinearLayoutManager(requireContext())
 

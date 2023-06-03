@@ -1,5 +1,5 @@
 package com.example.studentapp.ui.adapter
-
+//предоставление списка, адаптирование данных под список
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -31,6 +31,7 @@ class StudyAdapter(private val listener: (Int) -> Unit) :
 
     class ViewHolder(private val binding: ListItemStudyBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        //для предоставления ограниченного окна в большом наборе данных, ViewHolder описывает вид элемента и метаданные о его месте в RecyclerView.
 
         fun bind(item: StudyItem, listener: (Int) -> Unit) {
             val color = ContextCompat.getColor(binding.root.context, item.color)

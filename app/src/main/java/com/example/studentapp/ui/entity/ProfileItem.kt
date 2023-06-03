@@ -1,5 +1,5 @@
 package com.example.studentapp.ui.entity
-
+//модель данных
 import com.example.studentapp.R
 
 data class ProfileItem(

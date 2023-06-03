@@ -1,5 +1,5 @@
 package com.example.studentapp.utils
-
+//для отображения уведомлений
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.app.Notification
 import android.app.NotificationChannel

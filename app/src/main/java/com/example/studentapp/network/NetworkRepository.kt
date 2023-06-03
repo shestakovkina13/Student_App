@@ -4,7 +4,7 @@ import com.example.studentapp.domain.entity.User
 import com.example.studentapp.network.entity.Details
 import com.example.studentapp.network.entity.Profile
 import com.example.studentapp.network.entity.Study
-
+//список команд
 interface NetworkRepository {
 
     suspend fun getProfileByUser(user: User): Profile?

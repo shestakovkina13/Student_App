@@ -11,7 +11,7 @@ import com.example.studentapp.ui.activity.login.LoginActivity
 import com.example.studentapp.ui.base.BaseFragment
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
-
+//binding - создаёт экземпляр layout, генерирует код для view
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentProfileBinding =
         FragmentProfileBinding::inflate
 

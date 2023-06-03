@@ -12,7 +12,8 @@ import kotlinx.coroutines.withContext
 
 class ProfileViewModel : ViewModel() {
     val profile = MutableLiveData<ProfileItem>()
-
+//Coroutine для управления асинхронными задачами, которые иначе могут блокировать основной поток и приводить к зависанию UI приложения
+    //Dispatchers определяет какой поток или какие потоки будут использоваться для выполнения Coroutine
     fun getProfile() {
         CoroutineScope(Dispatchers.IO).launch {
             val user = App.get().domainRepository.getUser()
